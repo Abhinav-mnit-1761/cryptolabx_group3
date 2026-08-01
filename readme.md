@@ -18,7 +18,7 @@ CryptoLabX is a modular cryptography toolkit developed as part of the Cryptograp
 
 ## Project Structure
 
-```text
+
 CryptoLabX_Group3/
 │
 ├── classical/
