@@ -1,0 +1,463 @@
+Script started on 2026-08-06 06:17:37+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="47"]
+[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ uname -a
+[?2004lLinux LABOOKA 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ lsb_real[K[Klease -s[Ka
+[?2004lNo LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.4 LTS
+Release:	24.04
+Codename:	noble
+[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ python3 --version
+[?2004lPython 3.12.3
+[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ pip3 --version
+[?2004lpip 24.0 from /usr/lib/python3/dist-packages/pip (python 3.12)
+[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ python3 -m e[Kenv[K[K[Kvenv .vendv[K[Kv
+[?2004l[?2004h]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ source .venv/cin[K[K[Kvin[K[K[Kbin/activav[K[Kte==[K[K[K[Kav[Kte
+[?2004l[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ pip install --upgrade pip
+[?2004lRequirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (24.0)
+Collecting pip
+  Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.8 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;197m━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.3/1.8 MB[0m [31m8.1 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.6/1.8 MB[0m [31m9.0 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━[0m [32m1.0/1.8 MB[0m [31m9.5 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━[0m [32m1.4/1.8 MB[0m [31m9.2 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━[0m [32m1.8/1.8 MB[0m [31m9.6 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.8/1.8 MB[0m [31m9.1 MB/s[0m eta [36m0:00:00[0m
+[?25hInstalling collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-26.2.1
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ pip install semgrep[K[K[K[K[K[K[K[K semgrep
+[?2004lCollecting semgrep
+  Downloading semgrep-1.172.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-manylinux_2_34_x86_64.whl.metadata (22 kB)
+Collecting attrs>=21.3 (from semgrep)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting boltons~=21.0 (from semgrep)
+  Downloading boltons-21.0.0-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting click-option-group~=0.5 (from semgrep)
+  Downloading click_option_group-0.5.9-py3-none-any.whl.metadata (5.8 kB)
+Collecting click~=8.4.2 (from semgrep)
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting colorama~=0.4.0 (from semgrep)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting exceptiongroup~=1.2.0 (from semgrep)
+  Downloading exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+Collecting glom>=23.3 (from semgrep)
+  Downloading glom-25.12.0-py3-none-any.whl.metadata (5.2 kB)
+Collecting jsonschema~=4.25.1 (from semgrep)
+  Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting mcp==1.23.3 (from semgrep)
+  Downloading mcp-1.23.3-py3-none-any.whl.metadata (89 kB)
+Collecting opentelemetry-api~=1.37.0 (from semgrep)
+  Downloading opentelemetry_api-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-sdk~=1.37.0 (from semgrep)
+  Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-exporter-otlp-proto-http~=1.37.0 (from semgrep)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.65b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-threading~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_threading-0.65b0-py3-none-any.whl.metadata (2.1 kB)
+Collecting packaging>=21.0 (from semgrep)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting peewee~=3.14 (from semgrep)
+  Downloading peewee-3.19.0-py3-none-any.whl.metadata (7.0 kB)
+Collecting pyjwt~=2.13.0 (from pyjwt[crypto]~=2.13.0->semgrep)
+  Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting requests~=2.22 (from semgrep)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting rich>=13.5.2 (from semgrep)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting ruamel.yaml>=0.18.15 (from semgrep)
+  Downloading ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Collecting ruamel.yaml.clib==0.2.15 (from semgrep)
+  Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+Collecting semantic-version~=2.10.0 (from semgrep)
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+Collecting tomli~=2.4.0 (from semgrep)
+  Downloading tomli-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Collecting typing-extensions~=4.2 (from semgrep)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting urllib3~=2.0 (from semgrep)
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting wcmatch~=8.3 (from semgrep)
+  Downloading wcmatch-8.5.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting anyio>=4.5 (from mcp==1.23.3->semgrep)
+  Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting httpx-sse>=0.4 (from mcp==1.23.3->semgrep)
+  Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting httpx>=0.27.1 (from mcp==1.23.3->semgrep)
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting pydantic-settings>=2.5.2 (from mcp==1.23.3->semgrep)
+  Downloading pydantic_settings-2.14.2-py3-none-any.whl.metadata (3.4 kB)
+Collecting pydantic<3.0.0,>=2.11.0 (from mcp==1.23.3->semgrep)
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting python-multipart>=0.0.9 (from mcp==1.23.3->semgrep)
+  Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+Collecting sse-starlette>=1.6.1 (from mcp==1.23.3->semgrep)
+  Downloading sse_starlette-3.4.8-py3-none-any.whl.metadata (15 kB)
+Collecting starlette>=0.27 (from mcp==1.23.3->semgrep)
+  Downloading starlette-1.4.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting typing-inspection>=0.4.1 (from mcp==1.23.3->semgrep)
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting uvicorn>=0.31.1 (from mcp==1.23.3->semgrep)
+  Downloading uvicorn-0.52.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema~=4.25.1->semgrep)
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema~=4.25.1->semgrep)
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema~=4.25.1->semgrep)
+  Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting importlib-metadata<8.8.0,>=6.0 (from opentelemetry-api~=1.37.0->semgrep)
+  Downloading importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting zipp>=3.20 (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api~=1.37.0->semgrep)
+  Downloading zipp-4.1.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting googleapis-common-protos~=1.52 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep)
+  Downloading googleapis_common_protos-1.75.1-py3-none-any.whl.metadata (8.5 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.37.0 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.37.0 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep)
+  Downloading opentelemetry_proto-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting protobuf<7.0,>=5.0 (from opentelemetry-proto==1.37.0->opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep)
+  Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting opentelemetry-instrumentation==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.65b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.65b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.65b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting wrapt<3.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.65b0->opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading wrapt-2.3.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.4 kB)
+INFO: pip is looking at multiple versions of opentelemetry-semantic-conventions to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.64b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.64b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.63b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.63b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.63b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.63b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.63b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.63b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.63b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.63b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.62b1-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.62b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.62b1-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.62b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.62b0-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.62b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.62b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.62b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.61b0-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.61b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.61b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.60b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.60b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.60b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.60b1-py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is still looking at multiple versions of opentelemetry-semantic-conventions to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.60b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.60b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.60b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.60b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.59b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.59b0-py3-none-any.whl.metadata (7.1 kB)
+Collecting opentelemetry-semantic-conventions==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.59b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.59b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_requests-0.58b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_instrumentation-0.58b0-py3-none-any.whl.metadata (7.1 kB)
+Collecting opentelemetry-semantic-conventions==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading opentelemetry_util_http-0.58b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting wrapt<2.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.58b0->opentelemetry-instrumentation-requests~=0.58b0->semgrep)
+  Downloading wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.4 kB)
+INFO: pip is looking at multiple versions of opentelemetry-instrumentation-threading to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-threading~=0.58b0 (from semgrep)
+  Downloading opentelemetry_instrumentation_threading-0.64b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.63b1-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.63b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.62b1-py3-none-any.whl.metadata (2.2 kB)
+  Downloading opentelemetry_instrumentation_threading-0.62b0-py3-none-any.whl.metadata (2.2 kB)
+  Downloading opentelemetry_instrumentation_threading-0.61b0-py3-none-any.whl.metadata (2.2 kB)
+  Downloading opentelemetry_instrumentation_threading-0.60b1-py3-none-any.whl.metadata (2.1 kB)
+INFO: pip is still looking at multiple versions of opentelemetry-instrumentation-threading to determine which version is compatible with other requirements. This could take a while.
+  Downloading opentelemetry_instrumentation_threading-0.60b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.59b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.58b0-py3-none-any.whl.metadata (2.1 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.11.0->mcp==1.23.3->semgrep)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic<3.0.0,>=2.11.0->mcp==1.23.3->semgrep)
+  Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting cryptography>=3.4.0 (from pyjwt[crypto]~=2.13.0->semgrep)
+  Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Collecting charset_normalizer<4,>=2 (from requests~=2.22->semgrep)
+  Downloading charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
+Collecting idna<4,>=2.5 (from requests~=2.22->semgrep)
+  Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+Collecting certifi>=2023.5.7 (from requests~=2.22->semgrep)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting bracex>=2.1.1 (from wcmatch~=8.3->semgrep)
+  Downloading bracex-3.0.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting cffi>=2.0.0 (from cryptography>=3.4.0->pyjwt[crypto]~=2.13.0->semgrep)
+  Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]~=2.13.0->semgrep)
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting face>=20.1.1 (from glom>=23.3->semgrep)
+  Downloading face-26.0.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting httpcore==1.* (from httpx>=0.27.1->mcp==1.23.3->semgrep)
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.1->mcp==1.23.3->semgrep)
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings>=2.5.2->mcp==1.23.3->semgrep)
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.5.2->semgrep)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.5.2->semgrep)
+  Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.5.2->semgrep)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading semgrep-1.172.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-manylinux_2_34_x86_64.whl (69.6 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/69.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;197m━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.6/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:06[0m[2K   [38;5;197m━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.0/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:06[0m[2K   [38;5;197m━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.6/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:05[0m[2K   [38;5;197m━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.0/69.6 MB[0m [31m12.3 MB/s[0m eta [36m0:00:05[0m[2K   [38;5;197m━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12.8/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:05[0m[2K   [38;5;197m━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m15.5/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:05[0m[2K   [38;5;197m━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m18.1/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:05[0m[2K   [38;5;197m━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m20.7/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:04[0m[2K   [38;5;197m━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m23.1/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:04[0m[2K   [38;5;197m━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m25.7/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:04[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m28.3/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:04[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━[0m [32m30.9/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:04[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━[0m [32m33.6/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:03[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━[0m [32m36.2/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:03[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m38.8/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:03[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━[0m [32m41.2/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:03[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━[0m [32m43.8/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:03[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━[0m [32m46.4/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:02[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━[0m [32m49.0/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:02[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━[0m [32m51.6/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:02[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━[0m [32m54.3/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:02[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━[0m [32m56.9/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━[0m [32m59.2/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━[0m [32m61.9/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━[0m [32m64.5/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━[0m [32m67.1/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m [32m69.5/69.6 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m69.6/69.6 MB[0m [31m12.5 MB/s[0m  [33m0:00:05[0m
+[?25hDownloading mcp-1.23.3-py3-none-any.whl (231 kB)
+Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (788 kB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/788.2 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m788.2/788.2 kB[0m [31m10.7 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading boltons-21.0.0-py2.py3-none-any.whl (193 kB)
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Downloading click_option_group-0.5.9-py3-none-any.whl (11 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+Downloading opentelemetry_api-1.37.0-py3-none-any.whl (65 kB)
+Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl (19 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_proto-1.37.0-py3-none-any.whl (72 kB)
+Downloading googleapis_common_protos-1.75.1-py3-none-any.whl (300 kB)
+Downloading opentelemetry_instrumentation_requests-0.58b0-py3-none-any.whl (12 kB)
+Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl (207 kB)
+Downloading opentelemetry_instrumentation-0.58b0-py3-none-any.whl (33 kB)
+Downloading opentelemetry_util_http-0.58b0-py3-none-any.whl (7.7 kB)
+Downloading opentelemetry_instrumentation_threading-0.58b0-py3-none-any.whl (9.3 kB)
+Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl (131 kB)
+Downloading peewee-3.19.0-py3-none-any.whl (411 kB)
+Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/2.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.1/2.1 MB[0m [31m11.7 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
+Downloading idna-3.18-py3-none-any.whl (65 kB)
+Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Downloading tomli-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (253 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading wcmatch-8.5.2-py3-none-any.whl (39 kB)
+Downloading wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (88 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading bracex-3.0.1-py3-none-any.whl (11 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/4.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m2.6/4.7 MB[0m [31m12.8 MB/s[0m eta [36m0:00:01[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.7/4.7 MB[0m [31m12.1 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading glom-25.12.0-py3-none-any.whl (103 kB)
+Downloading face-26.0.1-py3-none-any.whl (57 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pydantic_settings-2.14.2-py3-none-any.whl (61 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.2/1.2 MB[0m [31m7.5 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+Downloading ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Downloading sse_starlette-3.4.8-py3-none-any.whl (16 kB)
+Downloading starlette-1.4.1-py3-none-any.whl (74 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading uvicorn-0.52.1-py3-none-any.whl (79 kB)
+Downloading zipp-4.1.0-py3-none-any.whl (10 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: peewee, boltons, zipp, wrapt, urllib3, typing-extensions, tomli, semantic-version, ruamel.yaml.clib, ruamel.yaml, rpds-py, python-multipart, python-dotenv, pyjwt, pygments, pycparser, protobuf, packaging, opentelemetry-util-http, mdurl, idna, httpx-sse, h11, face, exceptiongroup, colorama, click, charset_normalizer, certifi, bracex, attrs, annotated-types, wcmatch, uvicorn, typing-inspection, requests, referencing, pydantic-core, opentelemetry-proto, markdown-it-py, importlib-metadata, httpcore, googleapis-common-protos, glom, click-option-group, cffi, anyio, starlette, rich, pydantic, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, jsonschema-specifications, httpx, cryptography, sse-starlette, pydantic-settings, opentelemetry-semantic-conventions, jsonschema, opentelemetry-sdk, opentelemetry-instrumentation, mcp, opentelemetry-instrumentation-threading, opentelemetry-instrumentation-requests, opentelemetry-exporter-otlp-proto-http, semgrep
+[?25l[2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 0/66[0m [peewee][2K   [38;5;197m━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/66[0m [semantic-version][2K   [38;5;197m━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12/66[0m [python-dotenv][2K   [38;5;197m━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12/66[0m [python-dotenv][2K   [38;5;197m━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12/66[0m [python-dotenv][2K   [38;5;197m━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12/66[0m [python-dotenv][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/66[0m [pygments][2K   [38;5;197m━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m17/66[0m [packaging][2K   [38;5;197m━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m20/66[0m [idna][2K   [38;5;197m━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m24/66[0m [exceptiongroup][2K   [38;5;197m━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m27/66[0m [charset_normalizer][2K   [38;5;197m━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m27/66[0m [charset_normalizer][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━[0m [32m33/66[0m [uvicorn][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━[0m [32m33/66[0m [uvicorn][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━[0m [32m33/66[0m [uvicorn][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━[0m [32m38/66[0m [opentelemetry-proto][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━━[0m [32m39/66[0m [markdown-it-py][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━━━━[0m [32m41/66[0m [httpcore][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━[0m [32m43/66[0m [glom][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━[0m [32m43/66[0m [glom][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━[0m [32m43/66[0m [glom][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m45/66[0m [cffi][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━━━[0m [32m46/66[0m [anyio][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━[0m [32m48/66[0m [rich][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━━━━━━[0m [32m49/66[0m [pydantic][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━[0m [32m53/66[0m [httpx][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━[0m [32m53/66[0m [httpx][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━[0m [32m53/66[0m [httpx][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━━━[0m [32m57/66[0m [opentelemetry-semantic-conventions][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━[0m [32m58/66[0m [jsonschema][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━[0m [32m58/66[0m [jsonschema][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━[0m [32m60/66[0m [opentelemetry-instrumentation][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━[0m [32m60/66[0m [opentelemetry-instrumentation][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━[0m [32m61/66[0m [mcp][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;197m╸[0m[38;5;237m━━━[0m [32m61/66[0m [mcp][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;197m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m [32m65/66[0m [semgrep][2K   [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m66/66[0m [semgrep]
+[?25h[1A[2KSuccessfully installed annotated-types-0.8.0 anyio-4.14.2 attrs-26.1.0 boltons-21.0.0 bracex-3.0.1 certifi-2026.7.22 cffi-2.1.1 charset_normalizer-3.4.9 click-8.4.2 click-option-group-0.5.9 colorama-0.4.6 cryptography-50.0.0 exceptiongroup-1.2.2 face-26.0.1 glom-25.12.0 googleapis-common-protos-1.75.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 httpx-sse-0.4.3 idna-3.18 importlib-metadata-8.7.1 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 markdown-it-py-4.2.0 mcp-1.23.3 mdurl-0.1.2 opentelemetry-api-1.37.0 opentelemetry-exporter-otlp-proto-common-1.37.0 opentelemetry-exporter-otlp-proto-http-1.37.0 opentelemetry-instrumentation-0.58b0 opentelemetry-instrumentation-requests-0.58b0 opentelemetry-instrumentation-threading-0.58b0 opentelemetry-proto-1.37.0 opentelemetry-sdk-1.37.0 opentelemetry-semantic-conventions-0.58b0 opentelemetry-util-http-0.58b0 packaging-26.3 peewee-3.19.0 protobuf-6.33.6 pycparser-3.0 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.2 pygments-2.20.0 pyjwt-2.13.0 python-dotenv-1.2.2 python-multipart-0.0.32 referencing-0.37.0 requests-2.34.2 rich-15.0.0 rpds-py-2026.6.3 ruamel.yaml-0.19.1 ruamel.yaml.clib-0.2.15 semantic-version-2.10.0 semgrep-1.172.0 sse-starlette-3.4.8 starlette-1.4.1 tomli-2.4.1 typing-extensions-4.16.0 typing-inspection-0.4.2 urllib3-2.7.0 uvicorn-0.52.1 wcmatch-8.5.2 wrapt-1.17.3 zipp-4.1.0
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ semgerp =[K--version
+[?2004lCommand 'semgerp' not found, did you mean:
+  command 'semgrep' from snap semgrep (1.56.0)
+See 'snap info <snapname>' for additional versions.
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ sems[Kgrep --version
+[?2004l1.172.0
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ mkdir [K[K[K[K[K[Kls
+[?2004l[0m[01;34manalysis[0m  [01;34mdatasets[0m  main.py  [01;34moutputs[0m  readme.md  requirements.txt  sast_lab_log.txt  [01;34mutils[0m
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ mkdir[K[K[K[K[Kmd[Kkdir tests
+[?2004l[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ nano tests.[K/vulnerable.py
+[?2004l[?2004h[?1049h[22;0;0t[1;47r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[45;73H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 7.2                                                         tests/vulnerable.py                                                                  [1;155H(B[m[46d(B[0;7m^G(B[m Help[46;18H(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut[46;69H(B[0;7m^T(B[m Execute[86G(B[0;7m^C(B[m Location[103G(B[0;7mM-U(B[m Undo[46;120H(B[0;7mM-A(B[m Set Mark     (B[0;7mM-](B[m To Bracket[47d(B[0;7m^X(B[m Exit[47;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Paste[47;69H(B[0;7m^J(B[m Justify[86G(B[0;7m^/(B[m Go To Line    (B[0;7mM-E(B[m Redo[47;120H(B[0;7mM-6(B[m Copy[47;137H(B[0;7m^Q(B[m Where Was[2d[?12l[?25h[?25l[45d[K[1;92H(B[0;7m*[155G(B[m[2d(B[0;1m[36mimport[39m(B[m subprocess[3d(B[0;1m[36mimport[39m(B[m hashlib[5dpassword = (B[0;1m[32m"admin123"[7d[39m(B[mcmd = input((B[0;1m[32m"Enter a command: "[39m(B[m)[9dsubprocess.run(cmd, shell=(B[0;1m[35mTrue[39m(B[m)[11dprint(hashlib.md5(password.encode()).hexdigest())[?12l[?25h[?25l[46;18H[22X[46;40H(B[0;7mM-D(B[m DOS Format    [46;69H          (B[0;7mM-A(B[m Append        [103G        [118G(B[0;7mM-B(B[m Backup File[K[47;2H(B[0;7mC(B[m Cancel[47;18H[22X[47;40H(B[0;7mM-M(B[m Mac Format      [47;69H          (B[0;7mM-P(B[m Prepend[21X[47;118H(B[0;7m^T(B[m Browse[K[45d(B[0;7mFile Name to Write: tests/vulnerable.py                                                                                                                     [45;40H(B[m[?12l[?25h[?25l[45;71H[1K (B[0;7m[ Writing... ](B[m[K[1;92H(B[0;7m [155G(B[m[45;70H(B[0;7m[ Wrote 10 lines ](B[m[46;18H(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is      (B[0;7m^K(B[m Cut[46;69H(B[0;7m^T(B[m Execute       (B[0;7m^C(B[m Location[103G(B[0;7mM-U(B[m Undo[118G  (B[0;7mM-A(B[m Set Mark     (B[0;7mM-](B[m To Bracket[47;2H(B[0;7mX(B[m Exit  [47;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace       (B[0;7m^U(B[m Paste[47;69H(B[0;7m^J(B[m Justify       (B[0;7m^/(B[m Go To Line    (B[0;7mM-E(B[m Redo[118G  (B[0;7mM-6(B[m Copy[47;137H(B[0;7m^Q(B[m Where Was[?12l[?25h[11;50H[?25l[45d[J[47d[?12l[?25h[47;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ semgrep scan tessts.[K[K[K[Kts.[K/vulnerablity.py[K[K[K[K[K[Ke.py
+[?2004l
+┌──── [32m○○○[0m ────┐
+│ Semgrep CLI │
+└─────────────┘
+
+[?25l[2K[32m⠋[0m [1mLoading rules from registry...[0m[2K[32m⠙[0m [1mLoading rules from registry...[0m[2K[32m⠹[0m [1mLoading rules from registry...[0m[2K[32m⠸[0m [1mLoading rules from registry...[0m[2K[32m⠴[0m [1mLoading rules from registry...[0m[2K[32m⠦[0m [1mLoading rules from registry...[0m[2K[32m⠧[0m [1mLoading rules from registry...[0m[2K[32m⠇[0m [1mLoading rules from registry...[0m[2K[32m⠋[0m [1mLoading rules from registry...[0m[2K[32m⠙[0m [1mLoading rules from registry...[0m[2K[32m⠹[0m [1mLoading rules from registry...[0m[2K[32m⠼[0m [1mLoading rules from registry...[0m[2K[32m⠴[0m [1mLoading rules from registry...[0m[2K[32m⠦[0m [1mLoading rules from registry...[0m[2K[32m⠧[0m [1mLoading rules from registry...[0m[2K[32m⠏[0m [1mLoading rules from registry...[0m[2K[32m⠋[0m [1mLoading rules from registry...[0m                                                                                                                        
+[?25h[1A[2KScanning 1 file (only git-tracked) with:
+                                      
+[32m[22m[24m✔[0m [1m[24mSemgrep OSS[0m
+  [32m[22m[24m✔[0m Basic security coverage for first-party code vulnerabilities.
+                                              
+[31m[22m[24m✘[0m [1m[24mSemgrep Code (SAST)[0m
+  [31m[22m[24m✘[0m Find and fix vulnerabilities in the code you write with advanced scanning and expert security rules.
+                                                     
+[31m[22m[24m✘[0m [1m[24mSemgrep Supply Chain (SCA)[0m
+  [31m[22m[24m✘[0m Find and fix the reachable vulnerabilities in your OSS dependencies.
+                                                                            
+💎 Get started with all Semgrep products via [90m[22m[24m`semgrep login`[0m.
+✨ Learn more at [36m[22m[4mhttps://sg.run/cloud[0m.                        
+                                                                            
+[?25l[2K  [38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [33m0:00:00[0m                                                                                                                        
+[?25h                   
+                   
+┌─────────────────┐
+│ 2 Code Findings │
+└─────────────────┘
+                                      
+  [36m[22m[24m  tests/vulnerable.py[0m
+   [31m❯❯❱[0m [1mpython.lang.security.audit.subprocess-shell-true.subprocess-shell-true[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn
+          the command using a shell process. Doing so propagates current shell settings and variables, which 
+          makes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.         
+          Details: https://sg.run/J92w                                                                       
+                                                                                                             
+           [32m▶▶┆ Autofix ▶ [0mFalse
+            8┆ subprocess.run(cmd, shell=[1mTrue[0m)
+   
+   [33m ❯❱[0m [1mpython.lang.security.audit.md5-used-as-password.md5-used-as-password[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because  
+          it can be cracked by an attacker in a short amount of time. Use a suitable password hashing function
+          such as scrypt. You can use `hashlib.scrypt`.                                                       
+          Details: https://sg.run/5DwD                                                                        
+                                                                                                              
+           10┆ print([1mhashlib.md5(password.encode()).hexdigest()[0m)
+
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 2 (2 blocking)
+ • Rules run: 290
+ • Targets scanned: 1
+ • Parsed lines: ~100.0%
+ • No ignore information available
+Ran 290 rules on 1 file: 2 findings.
+💎 Missed out on 1856 pro rules since you aren't logged in!
+⚡ Supercharge Semgrep OSS when you create a free account at [36m[22m[4mhttps://sg.run/rules[0m.
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ [7msemgrep scan --config=p/security-audit tests/vulnerable.py[27msemgrep scan --config=p/security-audit tests/vulnerable.py
+[?2004l
+┌──── [32m○○○[0m ────┐
+│ Semgrep CLI │
+└─────────────┘
+
+[?25l[2K[32m⠋[0m [1mLoading rules from registry...[0m[2K[32m⠙[0m [1mLoading rules from registry...[0m[2K[32m⠹[0m [1mLoading rules from registry...[0m[2K[32m⠸[0m [1mLoading rules from registry...[0m[2K[32m⠴[0m [1mLoading rules from registry...[0m[2K[32m⠦[0m [1mLoading rules from registry...[0m[2K[32m⠦[0m [1mLoading rules from registry...[0m                                                                                                                        
+[?25h[1A[2KScanning 1 file (only git-tracked) with 225 Code rules:
+            
+  [4mCODE RULES[0m
+                                                                                                                        
+ [1m [0m[1mLanguage   [0m[1m [0m [1m [0m[1mRules[0m[1m [0m [1m [0m[1mFiles[0m[1m [0m        [1m [0m[1mOrigin   [0m[1m [0m [1m [0m[1mRules[0m[1m [0m                                                               
+ ─────────────────────────────        ───────────────────                                                               
+  python           77       1          Community     225                                                                
+  <multilang>       2       1                                                                                           
+                                                                                                                        
+                    
+  [4mSUPPLY CHAIN RULES[0m
+                                                                       
+  💎 Sign in with [90m[22m[24m`semgrep login`[0m and run               
+     [90m[22m[24m`semgrep ci`[0m to find dependency vulnerabilities and
+     advanced cross-file findings.                                     
+                                                                       
+          
+  [4mPROGRESS[0m
+   
+[?25l[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;197m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m[38;5;237m━[0m [35m  0%[0m [33m-:--:--[0m[2K  [38;5;70m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [33m0:00:00[0m                                                                                                                        
+[?25h                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                                      
+  [36m[22m[24m  tests/vulnerable.py[0m
+   [31m❯❯❱[0m [1mpython.lang.security.audit.subprocess-shell-true.subprocess-shell-true[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn
+          the command using a shell process. Doing so propagates current shell settings and variables, which 
+          makes it much easier for a malicious actor to execute commands. Use 'shell=False' instead.         
+          Details: https://sg.run/J92w                                                                       
+                                                                                                             
+           [32m▶▶┆ Autofix ▶ [0mFalse
+            8┆ subprocess.run(cmd, shell=[1mTrue[0m)
+
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 1 (1 blocking)
+ • Rules run: 79
+ • Targets scanned: 1
+ • Parsed lines: ~100.0%
+ • No ignore information available
+Ran 79 rules on 1 file: 1 finding.
+[?2004h(.venv) ]0;acer@LABOOKA: ~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[01;32macer@LABOOKA[00m:[01;34m~/crypto_lab/cryptolabx_group3/Cryptolabx_group3[00m$ c[Kexit
+[?2004lexit
+
+Script done on 2026-08-06 06:37:50+00:00 [COMMAND_EXIT_CODE="0"]
