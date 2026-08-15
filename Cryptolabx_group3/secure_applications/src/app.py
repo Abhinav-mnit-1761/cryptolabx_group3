@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from database import initialize_database, get_db
 
@@ -13,6 +14,7 @@ def home():
 
     <h3>Available Modules</h3>
     <ul>
+    	<li><a href="/search?name=abhinav">Search Patient</a></li>
     	<li><a href="/register">Patient Registration</a></li>
     	<li><a href="/appointments">Appointments</a></li>
     	<li><a href="/prescriptions">Prescriptions</a></li>
@@ -254,5 +256,48 @@ def medical_records():
     <br>
     <a href="/">Back to Home</a>
     """
+# first vulnerability: SQL injection
+@app.route("/search")
+def search_patient():
+    name = request.args.get("name", "")
+
+    conn = get_db()
+
+    query = "SELECT * FROM patients WHERE name = '" + name + "'"
+
+    patients = conn.execute(query).fetchall()
+
+    conn.close()
+
+    return "<br>".join(str(patient) for patient in patients)
+# second vulnerability: Boken access control
+@app.route("/patient-records")
+def patient_records():
+    patient_id = request.args.get("patient_id")
+
+    conn = get_db()
+
+    records = conn.execute(
+        "SELECT * FROM medical_records WHERE patient_id = ?",
+        (patient_id,)
+    ).fetchall()
+
+    conn.close()
+
+    return "<br>".join(
+    f"Record ID: {record[0]}, Patient ID: {record[1]}, File: {record[2]}"
+    for record in records
+)
+#Unrestricted file upload
+@app.route("/upload-report", methods=["POST"])
+def upload_report():
+    file = request.files["file"]
+
+    upload_folder = "uploads"
+    os.makedirs(upload_folder, exist_ok=True)
+
+    file.save(os.path.join(upload_folder, file.filename))
+
+    return "File uploaded successfully"
 if __name__ == "__main__":
     app.run(debug=True)
