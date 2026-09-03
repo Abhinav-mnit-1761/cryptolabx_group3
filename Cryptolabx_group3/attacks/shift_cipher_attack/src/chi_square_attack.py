@@ -47,11 +47,19 @@ def chi_square_score(text):
 
     return score
     
-ciphertext = "ExxirHergi"
-print("Key\ttext\t\tscore")
-for key in range(26):
-    decrypted = decypher(ciphertext, key)
-    score = chi_square_score(decrypted)
+def chi_square_attack(ciphertext):
+    best_key = 0
+    best_score = float("inf")
+    w = ""
 
-    print(key,"\t",decrypted,"\t",score) 
+    for key in range(26):
+        decrypted = decypher(ciphertext, key)
+        score = chi_square_score(decrypted)
+
+        if (score < best_score):
+            best_score = score
+            best_key = key
+            w = decrypted
+
+    return best_key, best_score,w
 

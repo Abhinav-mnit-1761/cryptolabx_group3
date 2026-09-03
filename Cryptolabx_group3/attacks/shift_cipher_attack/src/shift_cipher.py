@@ -18,7 +18,7 @@ def encrypt(s,k):
 	
 	return result
 	
-print(encrypt("Atten1Dance" , 4))
+#print(encrypt("Atten1Dance" , 4))
 		
 		
 		

@@ -10,20 +10,34 @@ def decypher(s,k):
 
 
 		
-def dec(s,getWord=True):
+def brute_force_dictionary(s,getWord=True):
+	
 	print("Input Cypher: " , s)
 	if(not(getWord)):	
 		for i in range(1,26):
 			print(decypher(s,i))
 	else:
+		key = -1
 		with open("../dictionary/english_words.txt" , "r") as file:
-			dictionary = set(words.strip().lower() for words in file)
-			
-		for i in range(1,26):
-			message = decypher(s , i)
-			if(message.lower() in dictionary):
-				print("Decrypted text found in dictionary")
-				print("Text: ", message)
+			dictionary = set(word.strip().lower() for word in file)
+		#print(type(dictionary))
+		maxcount = -1
+		w = ""
+		for i in range(0,26):
+			count = 0
+			message = decypher(s, i)
+
+			words = message.lower().split()
+
+			for word in words:
+				if word in dictionary:
+					count = count + 1
+					w = word
+			if(count > maxcount):
+				maxcount = count
+				key = i
+				wrd = w
+		return key, maxcount, decypher(s, key)
 		
 		
-# print(dec("ExxirHergi",False))
+#print(brute_force_dictionary("ExxirHergi"))

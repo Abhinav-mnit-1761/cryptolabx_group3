@@ -189,6 +189,15 @@ The following modules are planned for future laboratory assignments:
 Additional datasets, algorithms, tests, and utilities will be added as the laboratory work progresses.
 
 ---
+### Assigned Application: Hospital Management System
+## Core Functions
+Manage patient registration, appointments, prescriptions, billing, and medical records
+
+### Lab Progress
+## vulnerabilites added
+SQL Injection
+Broken Access Control
+File Upload vulnerability
 
 ## Version Control
 
@@ -201,7 +210,6 @@ https://github.com/Abhinav-mnit-1761/cryptolabx_group3
 ---
 
 ## Author
-
 **Abhinav Shankhwar**  
 Roll Number: **2024ucp1761**
 
