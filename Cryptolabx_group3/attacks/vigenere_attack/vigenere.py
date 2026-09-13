@@ -133,7 +133,7 @@ def vigenere_decrypt(ciphertext,key):
 		
 		plaintext.append(chr(p_value + ord('A')))
 		
-	return ''.join(ciphertext)
+	return ''.join(plaintext)
 
 def vigenere_encrypt(plaintext, key):
     ciphertext = []

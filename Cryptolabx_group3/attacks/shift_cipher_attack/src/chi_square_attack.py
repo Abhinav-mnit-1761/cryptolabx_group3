@@ -47,19 +47,37 @@ def chi_square_score(text):
 
     return score
     
-def chi_square_attack(ciphertext):
-    best_key = 0
-    best_score = float("inf")
-    w = ""
+def chi_square_attack(ciphertext,printall=False):
 
-    for key in range(26):
-        decrypted = decypher(ciphertext, key)
-        score = chi_square_score(decrypted)
+    if(printall):
+        best_key = 0
+        best_score = float("inf")
+        w = ""
+        for key in range(26):
+                decrypted = decypher(ciphertext, key)
+                score = chi_square_score(decrypted)
+                print(key," : ", score)
+
+                if (score < best_score):
+                        best_score = score
+                        best_key = key
+                        w = decrypted
+
+        return best_key, best_score,w
+    else:
+		
+        best_key = 0
+        best_score = float("inf")
+        w = ""
+
+        for key in range(26):
+                decrypted = decypher(ciphertext, key)
+                score = chi_square_score(decrypted)
 
         if (score < best_score):
-            best_score = score
-            best_key = key
-            w = decrypted
+                best_score = score
+                best_key = key
+                w = decrypted
 
-    return best_key, best_score,w
+        return best_key, best_score,w
 
