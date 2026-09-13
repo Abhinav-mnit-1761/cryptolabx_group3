@@ -74,16 +74,16 @@ An automated cryptanalysis framework for breaking polyalphabetic Vigenère ciphe
    - Computes prime factor frequencies to derive candidate key lengths.
 3. **Index of Coincidence (IoC)**:
    - Evaluates the Index of Coincidence across partitioned cosets for candidate key lengths:
-     $$IC = \frac{\sum f_i(f_i - 1)}{N(N - 1)}$$
-   - Identifies the true key length by locating peaks matching standard English text ($\approx 0.065 - 0.068$).
+     `IC = sum(f_i * (f_i - 1)) / (N * (N - 1))`
+   - Identifies the true key length by locating peaks matching standard English text (approx. 0.065 to 0.068).
 4. **Chi-Square Frequency Analysis**:
    - Splits ciphertext into $L$ independent cosets (where $L$ is key length), converting the polyalphabetic cipher into $L$ Caesar ciphers.
    - Tests all 26 possible shifts against standard English letter frequencies using Chi-Square goodness-of-fit:
-     $$\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$$
+     `Chi-Square Score = sum((Observed - Expected)^2 / Expected)`
    - Reconstructs the encryption key character by character.
 5. **Decryption and Verification**:
    - Decrypts the ciphertext using modular arithmetic:
-     $$P_i = (C_i - K_{i \pmod L}) \pmod{26}$$
+     `P[i] = (C[i] - K[i % L]) mod 26`
    - Automatically re-encrypts the decrypted plaintext and verifies matching with the original ciphertext.
    - Saves all findings to `attacks/vigenere_attack/outputs/result.txt`.
 
