@@ -1,0 +1,128 @@
+﻿================================================================================
+          CRYPTOLABX: AES-CBC PADDING ORACLE ATTACK TECHNICAL REPORT
+================================================================================
+
+1. WHAT IS A PADDING ORACLE ATTACK?
+--------------------------------------------------------------------------------
+A Padding Oracle Attack is a cryptanalytic technique that recovers plaintext 
+from an unauthenticated block cipher ciphertext (specifically AES in CBC mode) 
+without knowing the secret encryption key.
+
+The attack targets systems where a server, API, or function validates PKCS#7 
+padding upon decryption and leaks whether the padding was valid or invalid 
+through error messages, status codes, or processing time.
+
+
+2. HOW IS THE ATTACK POSSIBLE? (THE ROOT CAUSE)
+--------------------------------------------------------------------------------
+In AES-CBC mode, decryption computes:
+    P_i = D_K(C_i) XOR C_{i-1}
+
+Where:
+    - C_i is the current ciphertext block.
+    - D_K(C_i) is the AES block decryption using secret key K. 
+      We define I_i = D_K(C_i) as the "Intermediate State".
+    - C_{i-1} is the previous ciphertext block (or IV for the first block).
+    - P_i is the resulting plaintext block.
+
+Because D_K(C_i) is fixed for a given C_i and K, the intermediate state I_i 
+remains constant. 
+
+When an attacker submits a modified previous block C'_{i-1} alongside C_i, 
+the decrypted plaintext block becomes:
+    P'_i = I_i XOR C'_{i-1}
+
+Notice that XOR is a bitwise linear operation:
+Modifying byte k of C'_{i-1} directly and predictably changes byte k of P'_i.
+The attacker does NOT know what I_i is, but the attacker has complete 
+control over P'_i!
+
+
+3. PKCS#7 PADDING STANDARD (RFC 5652)
+--------------------------------------------------------------------------------
+AES requires the input to be a multiple of 16 bytes.
+PKCS#7 pads the data by appending N bytes, each with value N:
+    - Need 1 byte:  0x01
+    - Need 2 bytes: 0x02 0x02
+    - Need 3 bytes: 0x03 0x03 0x03
+    - If already a multiple of 16 bytes: 16 bytes of 0x10.
+
+A padding oracle returns True if the decrypted text ends with valid PKCS#7 
+padding, and False otherwise.
+
+
+4. STEP-BY-STEP RECOVERY MECHANICS (RIGHT TO LEFT)
+--------------------------------------------------------------------------------
+To recover a 16-byte block, we solve for bytes from right to left (k = 15 down to 0).
+
+STEP 1: Recover Byte 15 (Pad = 0x01)
+  - We want the last byte of decrypted plaintext P'_i[15] to equal 0x01.
+  - Set C'_{i-1}[0..14] to 0x00.
+  - Iterate candidate byte g in 0..255 for C'_{i-1}[15]:
+      Query Oracle with (C'_{i-1}, C_i).
+  - When the Oracle returns True:
+      P'_i[15] = 0x01
+      Because P'_i[15] = I_i[15] XOR g:
+          I_i[15] = g XOR 0x01
+  - The actual secret plaintext byte is recovered immediately:
+          P_i[15] = I_i[15] XOR C_{i-1}[15]
+
+STEP 2: Disambiguating False Positives
+  - If the original decrypted block accidentally ended in 0x02 0x02, the oracle 
+    might return True for a 2-byte pad instead of a 1-byte pad.
+  - To verify, mutate byte 14: C'_{i-1}[14] ^= 0x01.
+  - If the oracle STILL returns True, the pad was definitely 0x01.
+
+STEP 3: Recover Subsequent Bytes (k = 14 down to 0)
+  - Target pad value: pad = 16 - k (e.g., pad = 0x02 for k = 14).
+  - For all known positions j > k:
+      Set C'_{i-1}[j] = I_i[j] XOR pad (forces those bytes to equal pad).
+  - For unknown position k:
+      Loop g in 0..255 for C'_{i-1}[k].
+      When Oracle returns True:
+          I_i[k] = g XOR pad
+          P_i[k] = I_i[k] XOR C_{i-1}[k]
+  - Continue until all 16 bytes of block C_i are recovered.
+
+STEP 4: Full Message Decryption
+  - Repeat the block recovery for blocks 1 through M.
+  - Strip PKCS#7 padding from the full concatenated plaintext.
+
+
+5. COMPLEXITY & PERFORMANCE ANALYSIS
+--------------------------------------------------------------------------------
+- Brute force key search: 2^128 operations (computationally impossible).
+- Padding Oracle search:
+    * Worst case per byte: 256 queries
+    * Average case per byte: 128 queries
+    * Average per 16-byte block: ~2,048 queries
+    * For an 80-byte message (5 blocks): ~10,000 queries (takes ~3.6 seconds).
+
+
+6. SECURITY RECOMMENDATIONS (HOW TO PREVENT IT)
+--------------------------------------------------------------------------------
+1. Authenticated Encryption with Associated Data (AEAD):
+   Migrate from legacy AES-CBC to AES-GCM or ChaCha20-Poly1305. In AEAD modes,
+   the message authentication code (MAC) is checked before decryption, preventing
+   tampered ciphertexts from ever reaching the decryptor.
+
+2. Encrypt-then-MAC:
+   If CBC mode must be used, compute an HMAC over (IV || Ciphertext).
+   Always verify the HMAC in constant time BEFORE attempting decryption or 
+   padding validation.
+
+3. Constant-Time & Uniform Error Responses:
+   Never return distinguishable error messages (e.g. "Padding Error" vs "Decrypt Error")
+   and ensure padding checks take constant time.
+
+
+7. PRESENTATION SLIDES OUTLINE
+--------------------------------------------------------------------------------
+Slide 1: Title: Breaking AES-CBC with Padding Oracle Attack
+Slide 2: The Myth: "AES-128 is secure, so our data is safe."
+Slide 3: The Flaw: Unauthenticated CBC Mode is Malleable (P_i = D_K(C_i) XOR C_{i-1}).
+Slide 4: The Leak: PKCS#7 padding validation errors reveal plaintext.
+Slide 5: The Algorithm: Byte-by-byte recovery from right to left.
+Slide 6: Live Benchmark: 80 bytes recovered in 9,869 queries in 3.65 seconds.
+Slide 7: Prevention: AEAD (AES-GCM) and Encrypt-then-MAC.
+================================================================================

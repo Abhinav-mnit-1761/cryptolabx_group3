@@ -1,0 +1,43 @@
+===========================================================================
+CRYPTOLABX - PADDING ORACLE ATTACK REPORT
+===========================================================================
+
+--- 1. CIPHERTEXT METADATA ---
+IV (Hex):                  b332d68df081d2e1be12f3fbf99147db
+Ciphertext (Hex):          adaeb0442e3ea6318e843de3edbc6614
+Ciphertext Length:         16 bytes (1 blocks)
+
+--- 2. ATTACK EXECUTION & RECOVERY ---
+Target Plaintext (Original): abhinavisgod
+Recovered Plaintext:         abhinavisgod
+Recovered Plaintext (Hex):   616268696e61766973676f64
+Verification Successful:     True
+
+--- 3. ORACLE QUERY ANALYSIS ---
+Total Oracle Queries Made:   2704
+Total Ciphertext Bytes:      16
+Average Queries Per Byte:    169.00
+Execution Time:              1.044 seconds
+
+--- 4. BLOCK-BY-BLOCK BREAKDOWN ---
+Block #1:
+  Plaintext (Hex):    616268696e61766973676f6404040404
+  Intermediate (Hex): d250bee49ee0a488cd759c9ffd9543df
+  Queries Required:   2704
+
+--- 5. CRYPTANALYTIC EXPLANATION ---
+Why modifying the previous ciphertext block affects the target block:
+In AES-CBC mode, decryption follows the equation:
+    P_i = D_K(C_i) ^ C_{i-1} = I_i ^ C_{i-1}
+where D_K is AES decryption under secret key K, and I_i is the intermediate state.
+When an attacker submits a crafted block C'_{i-1} with target block C_i,
+the oracle decrypts C_i to I_i and XORs it with C'_{i-1}:
+    P'_i = I_i ^ C'_{i-1}
+Because XOR is a bitwise linear operation, the attacker has complete 1-to-1
+control over P'_i. By observing whether PKCS#7 padding succeeds, the attacker
+solves for I_i byte-by-byte from right to left without knowing the AES key.
+
+--- 6. SECURITY RECOMMENDATIONS ---
+1. Authenticated Encryption: Use AEAD ciphers such as AES-GCM or ChaCha20-Poly1305.
+2. Encrypt-then-MAC: If CBC must be used, verify HMAC over (IV || Ciphertext) BEFORE decryption.
+3. Constant-Time Verification: Avoid leaking padding validity differences in error messages or timing.
