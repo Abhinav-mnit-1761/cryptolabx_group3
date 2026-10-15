@@ -1,0 +1,49 @@
+================================================================================
+CRYPTOGRAPHIC PRIME GENERATION USING MILLER-RABIN PRIMALITY TEST
+================================================================================
+
+1. EXPERIMENTAL RESULTS
++----------------------------------+----------------------------------------------------------------------------------+
+| Parameter                        | Value                                                                            |
++----------------------------------+----------------------------------------------------------------------------------+
+| Assigned bit length              | 512                                                                              |
+| Generated prime candidate (Decimal) | 83938560529958661475938848885363078307481999795600685114234018609296294147042384 |
+|                                  | 50879324853116773613617518683579374270962595326703525529744086315558576153       |
+| Generated prime candidate (Hex)  | 0xa044505122f43d0d35879e6fc82bd6d701731100efe2132a01bc87018b16ddbfa717b81f897f42 |
+|                                  | d019d190397f181135ab07eeb91834eb8360f73d998bdd2019                               |
+| Actual bit length of the candidate | 512                                                                              |
+| Number of candidates tested      | 285                                                                              |
+| Number of Miller–Rabin rounds    | 40                                                                               |
+| Total execution time             | 0.0354 seconds                                                                   |
++----------------------------------+----------------------------------------------------------------------------------+
+
+2. CANDIDATE DETAILS
+Decimal Representation:
+8393856052995866147593884888536307830748199979560068511423401860929629414704238450879324853116773613617518683579374270962595326703525529744086315558576153
+
+Hexadecimal Representation:
+0xa044505122f43d0d35879e6fc82bd6d701731100efe2132a01bc87018b16ddbfa717b81f897f42d019d190397f181135ab07eeb91834eb8360f73d998bdd2019
+
+3. VERIFICATION REPORT
+- Assigned bit length: 512
+- Actual bit length: 512 (VALID: True)
+- Decomposition (n - 1) = 2^3 * d
+- Miller-Rabin with Specified Bases [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]:
+     [PASS] Base 2: Passed at square step 1 (a^(d*2^1) mod n == n - 1)
+     [PASS] Base 3: Passed at square step 2 (a^(d*2^2) mod n == n - 1)
+     [PASS] Base 5: Passed at square step 2 (a^(d*2^2) mod n == n - 1)
+     [PASS] Base 7: Passed at square step 1 (a^(d*2^1) mod n == n - 1)
+     [PASS] Base 11: Passed at initial test (a^d mod n == 8393856052995866147593884888536307830748199979560068511423401860929629414704238450879324853116773613617518683579374270962595326703525529744086315558576152)
+     [PASS] Base 13: Passed at initial test (a^d mod n == 1)
+     [PASS] Base 17: Passed at square step 2 (a^(d*2^2) mod n == n - 1)
+     [PASS] Base 19: Passed at initial test (a^d mod n == 1)
+     [PASS] Base 23: Passed at square step 1 (a^(d*2^1) mod n == n - 1)
+     [PASS] Base 29: Passed at square step 1 (a^(d*2^1) mod n == n - 1)
+     [PASS] Base 31: Passed at square step 2 (a^(d*2^2) mod n == n - 1)
+     [PASS] Base 37: Passed at square step 2 (a^(d*2^2) mod n == n - 1)
+
+- Independent Small Prime Trial Division (primes <= 2000): PASSED
+- Independent Fermat's Little Theorem Test (10 bases): PASSED
+- Independent Strong Lucas Probable Prime Test (Baillie-PSW): PASSED
+
+OVERALL VERIFICATION STATUS: VERIFIED PROBABLE PRIME
