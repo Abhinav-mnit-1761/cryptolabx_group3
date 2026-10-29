@@ -3,8 +3,8 @@ CRYPTOLABX - PADDING ORACLE ATTACK REPORT
 ===========================================================================
 
 --- 1. CIPHERTEXT METADATA ---
-IV (Hex):                  b332d68df081d2e1be12f3fbf99147db
-Ciphertext (Hex):          adaeb0442e3ea6318e843de3edbc6614
+IV (Hex):                  b172eaa4fe33f606dad9d620a051877f
+Ciphertext (Hex):          08d74f29fc68bd3e1611a0159a1dfc64
 Ciphertext Length:         16 bytes (1 blocks)
 
 --- 2. ATTACK EXECUTION & RECOVERY ---
@@ -14,16 +14,16 @@ Recovered Plaintext (Hex):   616268696e61766973676f64
 Verification Successful:     True
 
 --- 3. ORACLE QUERY ANALYSIS ---
-Total Oracle Queries Made:   2704
+Total Oracle Queries Made:   2156
 Total Ciphertext Bytes:      16
-Average Queries Per Byte:    169.00
-Execution Time:              1.044 seconds
+Average Queries Per Byte:    134.75
+Execution Time:              0.578 seconds
 
 --- 4. BLOCK-BY-BLOCK BREAKDOWN ---
 Block #1:
   Plaintext (Hex):    616268696e61766973676f6404040404
-  Intermediate (Hex): d250bee49ee0a488cd759c9ffd9543df
-  Queries Required:   2704
+  Intermediate (Hex): d01082cd9052806fa9beb944a455837b
+  Queries Required:   2156
 
 --- 5. CRYPTANALYTIC EXPLANATION ---
 Why modifying the previous ciphertext block affects the target block:
